@@ -31,7 +31,7 @@ void init_i2c(uint8_t i2c_num){
 		*pRccApb1Enr |= (1 << 23); // I2C3
 		init_i2c3();
 	}else{
-		printf("Not a valid I2C number as parameter\n");
+		printf("Not a valid I2C number as parameter (1-3)\n");
 	}
 }
 
