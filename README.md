@@ -1,4 +1,4 @@
-# stm32-drivers
+# stm32f407g-disc1-peripheral-drivers
 My bare-metal STM32F407G-DISC1 peripheral drivers.
 
 ## Reference documentation
