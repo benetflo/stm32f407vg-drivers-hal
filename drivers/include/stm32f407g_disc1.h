@@ -17,25 +17,25 @@
  * AHBx and APBx Bus Peripheral base addresses
  */
 
-#define PERIPH_BASE					  0x40000000U
-#define APB1PERIPH_BASE				PERIPH_BASE		// base address of APB1 BUS
-#define APB2PERIPH_BASE				0x40010000U		// base address of APB2 BUS
-#define AHB1PERIPH_BASE				0x40020000U     // base address of AHB1 BUS
-#define AHB2PERIPH_BASE				0x50000000U		// base address of AHB2 BUS
+#define PERIPH_BASE              0x40000000U
+#define APB1PERIPH_BASE          PERIPH_BASE          // base address of APB1 BUS
+#define APB2PERIPH_BASE          0x40010000U          // base address of APB2 BUS
+#define AHB1PERIPH_BASE          0x40020000U          // base address of AHB1 BUS
+#define AHB2PERIPH_BASE          0x50000000U          // base address of AHB2 BUS
 
 /*
  * Base addresses of peripherals which are on the AHB1 bus
  */
 
-#define GPIOA_BASEADDR				0x40020000U		// GPIO PORT A
-#define GPIOB_BASEADDR				0x40020400U		// GPIO PORT B
-#define GPIOC_BASEADDR				0x40020800U		// GPIO PORT C
-#define GPIOD_BASEADDR				0x40020C00U		// GPIO PORT D
-#define GPIOE_BASEADDR				0x40021000U 	// GPIO PORT E
-#define GPIOF_BASEADDR				0x40021400U		// GPIO PORT F
-#define GPIOG_BASEADDR				0x40021800U		// GPIO PORT G
-#define GPIOH_BASEADDR				0x40021C00U		// GPIO PORT H
-#define GPIOI_BASEADDR				0x40022000U		// GPIO PORT I
+#define GPIOA_BASEADDR		0x40020000U		// GPIO PORT A
+#define GPIOB_BASEADDR		0x40020400U		// GPIO PORT B
+#define GPIOC_BASEADDR		0x40020800U		// GPIO PORT C
+#define GPIOD_BASEADDR		0x40020C00U		// GPIO PORT D
+#define GPIOE_BASEADDR		0x40021000U 		// GPIO PORT E
+#define GPIOF_BASEADDR		0x40021400U		// GPIO PORT F
+#define GPIOG_BASEADDR		0x40021800U		// GPIO PORT G
+#define GPIOH_BASEADDR		0x40021C00U		// GPIO PORT H
+#define GPIOI_BASEADDR		0x40022000U		// GPIO PORT I
 
 #define RCC_BASEADDR				  0x40023800U
 
