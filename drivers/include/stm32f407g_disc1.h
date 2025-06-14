@@ -99,27 +99,27 @@ typedef struct
 	volatile uint32_t AHB1RSTR;				// RCC AHB1 peripheral reset register
 	volatile uint32_t AHB2RSTR;				// RCC AHB2 peripheral reset register
 	volatile uint32_t AHB3RSTR;				// RCC AHB3 peripheral reset register
-	uint32_t		  RESERVED0;
+	uint32_t	  RESERVED0;
 	volatile uint32_t APB1RSTR;				// RCC APB1 peripheral reset register
 	volatile uint32_t APB2RSTR;				// RCC APB2 peripheral reset register
-	uint32_t	      RESERVED1[2];
+	uint32_t	  RESERVED1[2];
 	volatile uint32_t AHB1ENR;				// RCC AHB1 peripheral clock register
 	volatile uint32_t AHB2ENR;				// RCC AHB2 peripheral clock enable register
 	volatile uint32_t AHB3ENR;				// RCC AHB3 peripheral clock enable register
-	uint32_t		  RESERVED2;
+	uint32_t          RESERVED2;
 	volatile uint32_t APB1ENR;				// RCC APB1 peripheral clock enable register
 	volatile uint32_t APB2ENR;				// RCC APB2 peripheral clock enable register
-	uint32_t		  RESERVED3[2];
+	uint32_t	  RESERVED3[2];
 	volatile uint32_t AHB1LPENR;			// RCC AHB1 peripheral clock enable in low power mode register
 	volatile uint32_t AHB2LPENR;			// RCC AHB2 peripheral clock enable in low power mode register
 	volatile uint32_t AHB3LPENR;			// RCC AHB3 peripheral clock enable in low power mode register
-	uint32_t		  RESERVED4;
+	uint32_t          RESERVED4;
 	volatile uint32_t APB1LPENR;			// RCC APB1 peripheral clock enable in low power mode register
 	volatile uint32_t APB2LPENR;			// RCC APB2 peripheral clock enabled in low power mode register
-	uint32_t		  RESERVED5[2];
+	uint32_t          RESERVED5[2];
 	volatile uint32_t BDCR;					// RCC Backup domain control register
 	volatile uint32_t CSR;					// RCC clock control & status register
-	uint32_t		  RESERVED6[2];
+	uint32_t          RESERVED6[2];
 	volatile uint32_t SSCGR;				// RCC spread spectrum clock generation register
 	volatile uint32_t PLLI2SCFGR;			// RCC PLLI2S configuration register
 	volatile uint32_t PLLSAICFGR;			// RCC PLL configuration register
@@ -151,8 +151,8 @@ typedef struct
  * Clock enable macros for GPIOx, I2Cx, SPIx, USARTx, SYSCFG peripherals
  */
 
-#define GPIOA_PCLK_EN()      ( RCC->AHB1ENR |= (1 << 0) )
-#define GPIOB_PCLK_EN()		   ( RCC->AHB1ENR |= (1 << 1) )
+#define GPIOA_PCLK_EN()		   ( RCC->AHB1ENR |= (1 << 0) )
+#define GPIOB_PCLK_EN()	           ( RCC->AHB1ENR |= (1 << 1) )
 #define GPIOC_PCLK_EN()		   ( RCC->AHB1ENR |= (1 << 2) )
 #define GPIOD_PCLK_EN()		   ( RCC->AHB1ENR |= (1 << 3) )
 #define GPIOE_PCLK_EN()		   ( RCC->AHB1ENR |= (1 << 4) )
@@ -174,13 +174,13 @@ typedef struct
 #define USART3_PCLK_EN()	   ( RCC->APB1ENR |= (1 << 18) )
 #define USART6_PCLK_EN()	   ( RCC->APB2ENR |= (1 << 5) )
 
-#define SYSCFG_PCLK_EN()     ( RCC->APB2ENR |= (1 << 14) )
+#define SYSCFG_PCLK_EN()           ( RCC->APB2ENR |= (1 << 14) )
 
 /*
  * Clock disable macros for GPIOx, I2Cx, SPIx, USARTx, SYSCFG peripherals
  */
 
-#define GPIOA_PCLK_DI()      ( RCC->AHB1ENR &= ~(1 << 0) )
+#define GPIOA_PCLK_DI()            ( RCC->AHB1ENR &= ~(1 << 0) )
 #define GPIOB_PCLK_DI()		   ( RCC->AHB1ENR &= ~(1 << 1) )
 #define GPIOC_PCLK_DI()		   ( RCC->AHB1ENR &= ~(1 << 2) )
 #define GPIOD_PCLK_DI()		   ( RCC->AHB1ENR &= ~(1 << 3) )
@@ -203,6 +203,6 @@ typedef struct
 #define USART3_PCLK_DI()	   ( RCC->APB1ENR &= ~(1 << 18) )
 #define USART6_PCLK_DI()	   ( RCC->APB2ENR &= ~(1 << 5) )
 
-#define SYSCFG_PCLK_DI()     ( RCC->APB2ENR &= ~(1 << 14) )
+#define SYSCFG_PCLK_DI()           ( RCC->APB2ENR &= ~(1 << 14) )
 
 #endif
