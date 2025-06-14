@@ -7,15 +7,15 @@
 
 #define FLASH_BASEADDR 				0x08000000U   	//
 #define SRAM1_BASEADDR 				0x20000000U   	//
-#define SRAM2_BASEADDR              0x2001C000U   	//
-#define ROM_BASEADDR                0x1FFF0000U   	//system memory
-#define SRAM 						SRAM1_BASEADDR	//SRAM1 used as standard
+#define SRAM2_BASEADDR              		0x2001C000U   	//
+#define ROM_BASEADDR                		0x1FFF0000U   	//system memory
+#define SRAM 					SRAM1_BASEADDR	//SRAM1 used as standard
 
 /*
  * AHBx and APBx Bus Peripheral base addresses
  */
 
-#define PERIPH_BASE					0x40000000U
+#define PERIPH_BASE				0x40000000U
 #define APB1PERIPH_BASE				PERIPH_BASE		// base address of APB1 BUS
 #define APB2PERIPH_BASE				0x40010000U		// base address of APB2 BUS
 #define AHB1PERIPH_BASE				0x40020000U     // base address of AHB1 BUS
