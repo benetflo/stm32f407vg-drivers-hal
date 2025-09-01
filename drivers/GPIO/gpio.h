@@ -44,9 +44,9 @@ typedef struct
 #define GPIO_MODE_ANALOG 3
 
 // Interrupt modes
-#define GPIO_MODE_IT_FT 4
-#define GPIO_MODE_IT_RT 5
-#define GPIO_MODE_IT_RFT 6
+#define GPIO_MODE_IT_FT 4    // Falling edge detection
+#define GPIO_MODE_IT_RT 5	 // Rising edge detection
+#define GPIO_MODE_IT_RFT 6   // Rising aswell as falling edge detection
 
 
 #define GPIO_OUT_TYPE_PP 0
@@ -75,7 +75,8 @@ void gpio_write_pin(GPIO_RegDef_t *pGPIOx, uint8_t pin_num, uint8_t value);
 void gpio_write_port(GPIO_RegDef_t *pGPIOx, uint16_t value);
 void gpio_toggle_pin(GPIO_RegDef_t *pGPIOx, uint8_t pin_num);
 
-void gpio_irq_config(uint8_t irq_num, uint8_t irq_priority, uint8_t EnOrDi);
+void gpio_irq_config(uint8_t irq_num, uint8_t EnOrDi);
+void gpio_irq_prio_config(uint8_t irq_num, uint32_t irq_prio);
 void gpio_irq_handling(uint8_t pin_num);
 
 
