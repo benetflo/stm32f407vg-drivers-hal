@@ -63,3 +63,8 @@ _start:
     SUB SP, SP, #4      @ Make room on the stack. (SP = SP - 4). Point SP to the byte located under current SP position in memory
     STR R0, [SP]        @ Write R0:s value to the top of the stack.
 
+    @ How to set a bit in a register:
+    LDR R0, =0x40021018         @ RCC_APBENR address 
+    LDR R1, [R0]            
+    ORR R1, R1, #0x10       @ In C:  R1 |= (0x10)       @ This will set bit 4 in the RCC_APBENR register
+    STR R1, [R0]            @ Save changes
