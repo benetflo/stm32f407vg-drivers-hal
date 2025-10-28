@@ -59,7 +59,7 @@ _start:
     @ PUSH saves one or more registers on the stack and adjusts SP automatically
     @ STR can also be used to write a value to a specific memoryaddress. Here you have to adjust SP manually like this:
 
-    MOV RO, #5
+    MOV R0, #5
     SUB SP, SP, #4      @ Make room on the stack. (SP = SP - 4). Point SP to the byte located under current SP position in memory
     STR R0, [SP]        @ Write R0:s value to the top of the stack.
 
