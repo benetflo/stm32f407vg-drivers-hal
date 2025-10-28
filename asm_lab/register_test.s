@@ -68,3 +68,18 @@ _start:
     LDR R1, [R0]            
     ORR R1, R1, #0x10       @ In C:  R1 |= (0x10)       @ This will set bit 4 in the RCC_APBENR register
     STR R1, [R0]            @ Save changes
+
+    @ How to add assembly function to C file for critical parts of the program
+    @ In the C program at the top:     extern void fast_add(void);
+    @ Write:    fast_add();             where you want to use it in the C program
+    @ Remember to include the assembly file when building
+    @ Assembly file can look like this:
+
+.syntax unified
+.cpu cortex-m3
+.thumb
+.global fast_add     @ Make visible for linker (match extern in C program)
+
+fast_add:
+    ADD R0, R0, R1   @ R0 = R0 + R1
+    BX  LR           @ Return from function
