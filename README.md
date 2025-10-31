@@ -1,5 +1,11 @@
 # stm32f407g-disc1-peripheral-drivers
-My bare-metal STM32F407G-DISC1 peripheral drivers. IN PROGRESS
+
+# WORK IN PROGRESS
+
+This project contains a set of low-level peripheral drivers and a hardware abstraction layer (HAL) for the STM32F407G-DISC1 development board.
+
+The driver layer was developed as part of a learning project through a course on Udemy, following the STM32F4 reference manual and datasheet, with some personal customizations.
+On top of that, I designed and implemented an abstraction layer entirely by myself, extending the base drivers to make peripheral usage easier and more modular.
 
 ## Reference documentation
 
