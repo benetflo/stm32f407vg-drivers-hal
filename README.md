@@ -1,4 +1,4 @@
-# stm32f407g-disc1-peripheral-drivers
+# stm32f407vg-drivers-hal
 
 # WORK IN PROGRESS
 
