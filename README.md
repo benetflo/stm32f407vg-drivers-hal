@@ -4,7 +4,7 @@
 
 This project contains a set of low-level peripheral drivers and a hardware abstraction layer (HAL) for the STM32F407G-DISC1 development board.
 
-The driver layer was developed as part of a learning project through a course on Udemy, following the STM32F4 reference manual and datasheet, with some personal customizations.
+The driver layer was developed as part of a learning project based on a Udemy course. The course provided example drivers following the STM32F4 reference manual and datasheet, and I made personal modifications to adapt them to my own needs.
 On top of that, I designed and implemented an abstraction layer entirely by myself, extending the base drivers to make peripheral usage easier and more modular.
 
 ## Reference documentation
