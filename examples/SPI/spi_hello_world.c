@@ -24,6 +24,10 @@ void SPI2_GPIOInits(void)
 	//MOSI
 	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;
 	gpio_init(&SPIPins);
+
+	//NSS
+	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
+	gpio_init(&SPIPins);
 }
 
 void SPI2_Inits(void)
@@ -38,9 +42,23 @@ void SPI2_Inits(void)
 	SPI2handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
 	SPI2handle.SPIConfig.SPI_CPOL = SPI_CPOL_LOW;
 	SPI2handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
-	SPI2handle.SPIConfig.SPI_SSM = SPI_SSM_EN; //Hardware slave management enabled for NSS pin
+	SPI2handle.SPIConfig.SPI_SSM = SPI_SSM_DI; //Hardware slave management enabled for NSS pin
 
 	spi_init(&SPI2handle);
+}
+
+void GPIO_ButtonInit(void)
+{
+	GPIO_Handle_t GPIOBtn;
+
+	//this is btn gpio configuration
+	GPIOBtn.pGPIOx = GPIOA;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_0;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IN;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+
+	gpio_init(&GPIOBtn);
 }
 
 int main(void)
@@ -51,13 +69,18 @@ int main(void)
 
 	SPI2_Inits();
 
-	SPI_SSIConfig(SPI2, ENABLE);
+	GPIO_ButtonInit();
 
-	spi_peripheral_control(SPI2, ENABLE);
+	SPI_SSOEConfig(SPI2, ENABLE);
+	while(1)
+	{
+		while( ! gpio_read_pin(GPIOA,GPIO_PIN_NO_0) );
+		spi_peripheral_control(SPI2, ENABLE);
 
-	spi_send_data(SPI2, (uint8_t*)user_data, strlen(user_data));
+		spi_send_data(SPI2, (uint8_t*)user_data, strlen(user_data));
 
-	while(1);
+		spi_peripheral_control(SPI2, DISABLE);
+	}
 
 	return 0;
 }
