@@ -1,0 +1,40 @@
+#ifndef INC_HW_UART_H_
+#define INC_HW_UART_H_
+
+#include "stm32f407g-disc1.h"
+
+USART_Handle_t usart_init(USART_RegDef_t * UARTx, uint32_t BAUDRATE, uint8_t HW_FLOW_CTRL, uint8_t MODE, uint8_t STOP_BITS, uint8_t WORDLEN, uint8_t PARITY);
+
+void USART_Send(USART_Handle_t *UARTx,uint8_t *TX_BUFFER, uint32_t LENGTH);
+
+void USART_Recieve(USART_Handle_t * UARTx, uint8_t *RX_BUFFER, uint32_t LENGTH);
+
+// Baudrates don't need any new macros since the user can just enter the Baudrate as a number
+
+// PARITY MACROS
+#define PARITY_ODD				USART_PARITY_EN_ODD
+#define PARITY_EVEN				USART_PARITY_EN_EVEN
+#define PARITY_DISABLE			USART_PARITY_DISABLE
+
+// WORDLEN MACROS
+#define WORDLEN_8				USART_WORDLEN_8BITS
+#define WORDLEN_9				USART_WORDLEN_9BITS
+
+// HARDWARE CONTROL MACROS
+#define HW_FLOW_CTRL_NONE		USART_HW_FLOW_CTRL_NONE
+#define HW_FLOW_CTRL_CTS		USART_HW_FLOW_CTRL_CTS
+#define HW_FLOW_CTRL_RTS		USART_HW_FLOW_CTRL_RTS
+#define HW_FLOW_CTRL_CTS_RTS	USART_HW_FLOW_CTRL_CTS_RTS
+
+// MODE MACROS
+#define ONLY_TX					USART_MODE_ONLY_TX
+#define ONLY_RX					USART_MODE_ONLY_RX
+#define TX_AND_RX				USART_MODE_TXRX
+
+// STOP BITS MACROS
+#define STOP_BIT_0_5			USART_STOPBITS_0_5
+#define STOP_BIT_1				USART_STOPBITS_1
+#define STOP_BIT_1_5			USART_STOPBITS_1_5
+#define STOP_BIT_2				USART_STOPBITS_2
+
+#endif
