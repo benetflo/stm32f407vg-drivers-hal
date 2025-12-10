@@ -1,8 +1,8 @@
-# stm32f407vg-drivers-hal
+# stm32-m3-m4-cortex-drivers
 
 # WORK IN PROGRESS
 
-This project contains a set of low-level peripheral drivers and a hardware abstraction layer (HAL) for the STM32F407VG microcontroller.
+This project contains a set of low-level peripheral drivers and a custom hardware abstraction layer.
 
 The driver layer was developed as part of a learning project based on a Udemy course. The course provided example drivers following the STM32F4 reference manual and datasheet, and I made personal modifications to adapt them to my own needs.
 On top of that, I designed and implemented an abstraction layer entirely by myself, extending the base drivers to make peripheral usage easier and more modular.
